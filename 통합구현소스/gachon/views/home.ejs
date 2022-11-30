@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A,B,C 대학 정보 요청</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <br>
+        <p class="fs-2 text-center">회원가입</p>
+        <form method="post" action="/signUp">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th scope="col" class="text-center">아이디</th>
+                        <th scope="col" class="text-center"><input type="text" class="form-control" name="id" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></th>
+                    </tr>
+                    <tr>
+                        <th scope="col" class="text-center">비밀번호</th>
+                        <th scope="col" class="text-center"><input type="password" class="form-control" name="password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></th>
+                    </tr>
+                    <tr>
+                        <th scope="col" class="text-center">학번</th>
+                        <th scope="col" class="text-center"><input type="text" class="form-control" name="snum" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></th>
+                    </tr>
+                    <tr>
+                        <th scope="col" class="text-center">대학명</th>
+                        <th scope="col" class="text-center">
+                            <select class="form-select" aria-label="Default select example" name="univ">
+                                <option>대학을 선택해주세요.</option>
+                                <option value="A">A 대학</option>
+                                <option value="B">B 대학</option>
+                                <option value="C">C 대학</option>
+                            </select>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-grid gap-2 col-4 mx-auto">
+                <button class="btn btn-outline-dark" type="submit">가입하기</button>
+            </div>
+        </form>
+        <br>
+        <br>
+        <p class="fs-2 text-center">로그인</p>
+        <form method="post" action="/login">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th scope="col" class="text-center">아이디</th>
+                        <th scope="col" class="text-center"><input type="text" class="form-control" name="id" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></th>
+                    </tr>
+                    <tr>
+                        <th scope="col" class="text-center">비밀번호</th>
+                        <th scope="col" class="text-center"><input type="password" class="form-control" name="pw" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-grid gap-2 col-4 mx-auto">
+                <button class="btn btn-outline-dark" type="submit">로그인</button>
+            </div>
+        </form>
+        <form method="get" action="/monitoring">
+            <div class="d-grid gap-2 col-4 mx-auto mt-5">
+                <button class="btn btn-outline-dark" type="submit">송수신 현황 모니터링 보기</button>
+            </div>
+        </form>
+        <br>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>

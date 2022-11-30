@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수신현황 모니터링</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <br>
+        <h1>송수신현황 모니터링</h1>
+        <br>
+        <form method="post" action="/monitoring">
+            <table class="table table-bordered">
+                <tr>
+                    <th scope="col" class="text-center">수신일시</th>
+                    <th scope="col" class="text-center"><input type="date" name="start_date"> ~ <input type="date" name="end_date"></th>
+                </tr>
+                <tr>
+                    <th scope="col" class="text-center">대학명</th>
+                    <th scope="col" class="text-center">
+                        <select class="form-select" aria-label="Default select example" name="univ">
+                            <option>대학을 선택해주세요.</option>
+                            <option value="a">a 대학</option>
+                            <option value="b">b 대학</option>
+                            <option value="c">c 대학</option>
+                        </select>
+                    </th>
+                </tr>
+                <tr>
+                    <th scope="col" class="text-center">인터페이스 테이블명</th>
+                    <th scope="col" class="text-center">
+                        <select class="form-select" aria-label="Default select example" name="ifTable">
+                            <option>인터페이스 테이블을 선택해주세요.</option>
+                            <option value="std">학생테이블</option>
+                            <option value="major">학과테이블</option>
+                            <option value="lecture">과목테이블</option>
+                            <option value="prof">교수테이블</option>
+                            <option value="register">수강테이블</option>
+                            <option value="classroom">강의실테이블</option>
+                        </select>
+                    </th>
+                </tr>
+                <tr>
+                    <th scope="col" class="text-center">처리단계</th>
+                    <th scope="col" class="text-center">
+                        <select class="form-select" aria-label="Default select example" name="step">
+                            <option>처리단계를 선택해주세요.</option>
+                            <option value="cf">생성 완료</option>
+                            <option value="ce">생성시 오류</option>
+                            <option value="sf">전송 완료</option>
+                            <option value="se">전송시 오류</option>
+                        </select>
+                    </th>
+                </tr>
+                <tr>
+                    <th scope="col" class="text-center">처리결과</th>
+                    <th scope="col" class="text-center">
+                        <select class="form-select" aria-label="Default select example" name="result">
+                            <option>처리결과를 선택해주세요.</option>
+                            <option value="success">성공</option>
+                            <option value="fail">실패</option>
+                        </select>
+                    </th>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button type="submit" class="btn btn-outline-dark">검색</button>
+                        </div>
+                    </th>
+                </tr>
+            </table>
+        </form>
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-center">수신일시</th>
+                    <th scope="col" class="text-center">대학명</th>
+                    <th scope="col" class="text-center">I/F 테이블명</th>
+                    <th scope="col" class="text-center">처리단계</th>
+                    <th scope="col" class="text-center">처리결과</th>
+                    <th scope="col" class="text-center">에러코드</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if(datas.length===0){ %>
+                    <tr>
+                        <th scope="col" class="text-center" colspan="6">데이터가 존재하지 않습니다.</th>
+                    </tr>
+                <% }  else { %>
+                    <% for(var data of datas){ %>
+                        <tr>
+                            <th scope="col" class="text-center"><%= data.log_date %></th>
+                            <th scope="col" class="text-center"><%= univ %></th>
+                            <th scope="col" class="text-center"><%= data.log_if_table %></th>
+                            <th scope="col" class="text-center"><%= data.log_step %></th>
+                            <th scope="col" class="text-center"><%= data.log_result %></th>
+                            <th scope="col" class="text-center"><%= data.log_err_code %></th>
+                        </tr>
+                    <% } %>
+                <% } %>
+            </tbody>
+        </table>
+        <form method="get" action="/">
+            <div class="d-grid gap-2 col-4 mx-auto mt-5">
+                <button class="btn btn-outline-dark" type="submit">홈 화면 가기</button>
+            </div>
+        </form>
+        <br>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>

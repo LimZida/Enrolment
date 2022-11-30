@@ -1,0 +1,50 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "logs/.95d851625929557843638e4430536a9361cb4bec-audit.json",
+    "files": [
+        {
+            "date": 1653562017893,
+            "name": "logs/2022-05-26.log",
+            "hash": "65a993186b65502e99600841fdc73319"
+        },
+        {
+            "date": 1653577393881,
+            "name": "logs/2022-05-27.log",
+            "hash": "fa43da513ace6aca08aa8dadf6b8f884"
+        },
+        {
+            "date": 1653901957988,
+            "name": "logs/2022-05-30.log",
+            "hash": "f6cf47e225058f05d6803293d9952918"
+        },
+        {
+            "date": 1653925317072,
+            "name": "logs/2022-05-31.log",
+            "hash": "a3bcbd38dff8a8b93bb99f2d7b04554e"
+        },
+        {
+            "date": 1654009243414,
+            "name": "logs/2022-06-01.log",
+            "hash": "3d7eb6d79d1aaa94205eb31da81397fa"
+        },
+        {
+            "date": 1654095693318,
+            "name": "logs/2022-06-02.log",
+            "hash": "198e238cfec96b63b9fb744df9c16402"
+        },
+        {
+            "date": 1654214670658,
+            "name": "logs/2022-06-03.log",
+            "hash": "e8d625005482025683be202f11f1cdf5"
+        },
+        {
+            "date": 1654478455181,
+            "name": "logs/2022-06-06.log",
+            "hash": "260883d44932c269c8641e5413f474a0"
+        }
+    ],
+    "hashType": "md5"
+}
