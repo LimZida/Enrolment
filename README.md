@@ -3,4 +3,4 @@
 
 
 노션 URL:
-https://pickled-chalk-d90.notion.site/6eb12d2ed1e0449785f2c188bdf6144c
+https://agreeable-argon-137.notion.site/40ce233edfbc418e8a65ebb297659375
